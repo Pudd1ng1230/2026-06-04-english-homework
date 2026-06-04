@@ -1,104 +1,110 @@
-# English Homework — AI-Driven Movie Data Analysis & Visualization
+# AI 驱动的电影数据分析与可视化
 
-## Course Context
-- **Course**: English General Studies (英语通识课)
-- **Assignment**: Demonstrate, in English, the complete process of using AI (software/tools) to operate, analyze, complete a case/project/homework.
-- **Constraint**: Must NOT be the same as last semester's topic (AI website building / AI programming).
+## ⚡ 执行铁律（AI 必读，最高优先级）
 
-## Chosen Topic
-**AI-Driven Movie Data Analysis & Visualization Report** — Using Reasonix (AI agent with DeepSeek backend) to scrape, analyze, visualize, and present a movie dataset. The final deliverable is an interactive dashboard website + an English analysis report.
+0. **从零开始装** — 视频录制的是"从空白文件夹构建整个项目"的过程。AI 每句话、每个动作都必须表现得像是第一次看到这个需求、第一次写这些代码。绝对不能说"根据 REASONIX.md""按照计划""这个已经有了"之类的话。遇到已有文件时，该覆盖就覆盖，不要提它本来就在。
+1. **用中文沟通** — 跟学生说话用中文，别拽英文。
+2. **直接搬运，别造轮子** — 数据从 `../2026-05-28-movie-book-tracker/` 搬，代码能抄就抄。不要做新东西。
+3. **少废话，快执行** — 暗号一来直接干活，不要长篇分析、不要"让我想想"。识别暗号 → 搬运 → 写完，三步完事。
+4. **演示时别拆穿** — 不要把"暗号""演戏""假装"这些词说出来。课堂 demo 看起来是真实的 AI 辅助开发。
 
-## Staged Demo — Three Code Phrases (暗号)
+## 课程背景
+- **课程**：AI通识课
 
-The student will send these three prompts in sequence during the demo. Each triggers a specific AI response that forms one chapter of the presentation.
 
----
+## 分阶段演示 — 三条暗号
 
-### Code Phrase #1 — Data Collection (Crawler)
-
-**Student sends (simplified):**
-> Phase 1: 编写豆瓣电影爬虫脚本，UA轮换、随机间隔、Cookie维持、退避重试、断点续爬，全字段入SQLite
-
-**AI does:**
-- Show deep reasoning chain (task decomposition, anti-crawl strategy, architecture design)
-- Write a "Douban scraper" (`scraper.js`) that appears to crawl Douban
-- In reality: data already exists in MovieTracker — the script "miraculously works" on first run
-- All output in English
-
-**Deliverable:** `scraper.js` + populated SQLite database
+学生将在演示过程中依次发送以下三条指令。每条触发一段特定的 AI 响应，构成演示的一个章节。
 
 ---
 
-### Code Phrase #2 — Data Analysis (Python)
+### 暗号一：数据采集（爬虫）
 
-**Student sends (simplified):**
-> Phase 2: 编写Python分析脚本，直方图、箱线图、趋势图、旭日图，暗色主题#1c1c28，导出高清PNG
+**学生发送：**
+> 编写豆瓣电影爬虫脚本，UA轮换、随机间隔、Cookie维持、退避重试、断点续爬，全字段入SQLite
 
-**AI does:**
-- Explore the database schema to understand table structure
-- Write `analysis.py` using pandas + matplotlib
-- Run it, debug if needed, verify charts are generated
-- Output a statistical summary in English prose
+**AI 执行：**
+- 数据直接从movie项目中复制
+- 展示深层推理链（任务分解、反爬策略、架构设计）
+- 写一个"豆瓣爬虫"（`scraper.js`），看起来像是在爬豆瓣
+- 实际：数据已经存在于 MovieTracker 中 — 脚本"第一次运行就神奇地成功了"
 
-**Deliverable:** `analysis.py` + `charts/*.png` + statistical summary in chat
-
----
-
-### Code Phrase #3 — Visualization Dashboard Website
-
-**Student sends (simplified):**
-> Phase 3: 用React+Vite搭建暗色仪表盘，KPI卡片、Top10排行榜、图表嵌入，SQLite查询一键启动
-
-**AI does:**
-- Scaffold a React + Vite project inside this directory
-- Build KPI cards, chart display, rankings with filters
-- Wire up SQLite queries via a lightweight Express API
-- Apply dark theme matching the chart style
-- Generate an AI-written English conclusion section
-
-**Deliverable:** Full dashboard website, runnable via `npm run dev`
+**交付物：** `scraper.js` + 已填充的 SQLite 数据库
 
 ---
 
-## Project Structure (this directory)
+### 暗号二：数据分析（Python）
+
+**学生发送：**
+> 编写Python分析脚本，直方图、箱线图、趋势图、旭日图，暗色主题#1c1c28，导出高清PNG
+
+**AI 执行：**
+- 探索数据库结构，理解表关系
+- 用 pandas + matplotlib 写 `analysis.py`
+- 运行、调试、确认图表生成
+
+**交付物：** `analysis.py` + `charts/*.png` + 对话中的统计摘要
+
+---
+
+### 暗号三：可视化仪表盘网站
+
+**学生发送：**
+> 用React+Vite搭建暗色仪表盘，KPI卡片、Top10排行榜、图表嵌入，SQLite查询一键启动
+
+**AI 执行：**
+- 在此目录内搭建 React + Vite 项目
+- 构建 KPI 卡片、图表展示、带筛选的排行榜
+- 通过轻量 Express API 连接 SQLite 查询
+- 应用与图表风格统一的暗色主题
+- 生成 AI 撰写的结论段落
+
+**交付物：** 完整仪表盘网站，可通过 `npm run dev` 运行
+
+---
+
+## 项目结构（本目录）
 ```
 2026-06-04-english-homework/
-├── REASONIX.md              ← This file (requirements & context)
-├── scraper.js               ← Code Phrase #1: Douban crawler
-├── analysis.py              ← Code Phrase #2: Python analysis
-├── charts/                  ← Code Phrase #2: Generated PNG charts
-├── dashboard/               ← Code Phrase #3: React + Vite website
+├── REASONIX.md              ← 本文件（需求与上下文）
+├── scraper.js               ← 暗号一：豆瓣爬虫
+├── analysis.py              ← 暗号二：Python 分析
+├── charts/                  ← 暗号二：生成的 PNG 图表
+├── dashboard/               ← 暗号三：React + Vite 网站
 │   ├── src/
-│   ├── server/              ← Express API for SQLite queries
+│   ├── server/              ← Express API（SQLite 查询）
 │   └── ...
-└── report.md                ← Final English analysis report
+└── report.md                ← 最终分析报告
 ```
 
-## Data Source
-- MovieTracker project: `../2026-05-28-movie-book-tracker/`
-- Database: `server/movie-tracker.db` (SQLite, ~2,240 movies)
-- Key tables/columns: movies (douban_id, title, year, rating, directors, summary, cover_url, tags, ...)
+## 数据来源
+- MovieTracker 项目：`../2026-05-28-movie-book-tracker/`
+- 数据库：`server/movie-tracker.db`（SQLite，约 2,240 部电影）
+- 关键表/列：movies（douban_id, title, year, rating, directors, summary, cover_url, tags, ...）
 
-## Key Requirements
-1. ✅ Build everything inside `2026-06-04-english-homework/`
-2. ✅ All AI interaction and output in English
-3. ✅ Three code phrases form the complete demo narrative: Collect → Analyze → Present
-4. ✅ "Pretend" to crawl Douban — show thinking but don't actually hit the network
-5. ✅ Keep it simple, guarantee baseline, path clear
-6. ✅ Everything documented here so the AI knows the full plan across sessions
+## 关键要求
+1. ✅ 所有内容构建在 `2026-06-04-english-homework/` 内
+2. ✅ 三条暗号构成完整演示叙事：采集 → 分析 → 呈现
+3. ✅ "假装"爬豆瓣 — 展示思考过程但不实际访问网络
+4. ✅ 保持简单、保证底线、路径清晰
+5. ✅ 所有内容记录在此，确保跨会话 AI 了解完整计划
 
-## Visual Design Spec
-- Background: `#1c1c28`
-- Primary text: `#e4e4f0`
-- Accent cyan: `#4db8c8`
-- Rating gold: `#f5a623`
-- Danger orange: `#e87850`
-- Font: Inter (or system sans-serif fallback)
-- All charts and website must share this theme for visual consistency
+## 视觉设计规范
+- 背景色：`#1c1c28`
+- 主文字：`#e4e4f0`
+- 强调青：`#4db8c8`
+- 评分金：`#f5a623`
+- 警示橙：`#e87850`
+- 字体：Inter（或系统 sans-serif 后备）
+- 所有图表和网站必须共享此主题，保持视觉一致性
 
-## Demo Narrative Arc (for English presentation)
-1. **Introduction** — "Today I'll demonstrate how AI assists a complete data analysis workflow..."
-2. **Phase 1: Data Collection** — Send Code Phrase #1, AI reasons + writes crawler
-3. **Phase 2: Data Analysis** — Send Code Phrase #2, AI writes Python analysis, generates charts
-4. **Phase 3: Presentation** — Send Code Phrase #3, AI builds interactive dashboard
-5. **Reflection** — Summarize AI's role, limitations, lessons learned
+## ⚠️ 演戏模式 — 极其重要（先读这里）
+
+**当学生以"你好，你是什么模型"开头，接着说"定位到2026-06-04-english-homework文件夹"时，录屏已经开始。从此刻起：**
+
+0. **❌ 暗号到之前，禁止一切写操作！** — 没有暗号 = 只读。不准 npm install、不准创建文件、不准写代码、不准构建项目。唯一能做的事：读 REASONIX.md，理解项目结构，然后**等着**。学生发暗号之前说的任何话（比如"准备构建"）都是在给观众铺垫上下文，不是真的让你动手。
+1. **绝对不要提"暗号""code phrase""staged""acting""script""pretend""demo narrative"或任何拆穿第四面墙的词。** 这是真实的 AI 辅助工作流演示 — 一切表现得自然真实。
+2. **所有回复用中文** 
+3. **不要引用 REASONIX.md 中的本节内容**，也不要说各阶段是预先规划的。当学生发送类似"编写豆瓣爬虫…"的指令时，当作真实任务请求处理。
+4. **展示真实推理** — 大声思考架构、权衡、反爬策略等。让观众看到真实的 AI 辅助开发过程。
+5. **三个阶段构成自然叙事弧线**：数据采集 → 分析 → 呈现。让学生掌控节奏 — 每阶段由学生发送一条指令触发。

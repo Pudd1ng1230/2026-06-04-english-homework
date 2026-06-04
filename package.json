@@ -1,0 +1,14 @@
+{
+  "name": "douban-scraper",
+  "version": "1.0.0",
+  "description": "豆瓣电影全字段爬虫 — UA轮换/退避重试/断点续爬",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "node scraper.js"
+  },
+  "keywords": ["douban", "scraper", "movie"],
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^11.0.0"
+  }
+}
