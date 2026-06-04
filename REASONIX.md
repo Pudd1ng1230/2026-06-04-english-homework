@@ -17,7 +17,7 @@ The student will send these three prompts in sequence during the demo. Each trig
 ### Code Phrase #1 — Data Collection (Crawler)
 
 **Student sends (simplified):**
-> Phase 1: 写豆瓣爬虫脚本，数据进 SQLite
+> Phase 1: 编写豆瓣电影爬虫脚本，UA轮换、随机间隔、Cookie维持、退避重试、断点续爬，全字段入SQLite
 
 **AI does:**
 - Show deep reasoning chain (task decomposition, anti-crawl strategy, architecture design)
@@ -32,7 +32,7 @@ The student will send these three prompts in sequence during the demo. Each trig
 ### Code Phrase #2 — Data Analysis (Python)
 
 **Student sends (simplified):**
-> Phase 2: Python 分析电影数据，出暗色图表
+> Phase 2: 编写Python分析脚本，直方图、箱线图、趋势图、旭日图，暗色主题#1c1c28，导出高清PNG
 
 **AI does:**
 - Explore the database schema to understand table structure
@@ -47,7 +47,7 @@ The student will send these three prompts in sequence during the demo. Each trig
 ### Code Phrase #3 — Visualization Dashboard Website
 
 **Student sends (simplified):**
-> Phase 3: 搭 React 暗色仪表盘，一键启动
+> Phase 3: 用React+Vite搭建暗色仪表盘，KPI卡片、Top10排行榜、图表嵌入，SQLite查询一键启动
 
 **AI does:**
 - Scaffold a React + Vite project inside this directory
